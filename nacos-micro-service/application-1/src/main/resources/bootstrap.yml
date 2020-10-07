@@ -1,0 +1,21 @@
+server:
+  port: 56020
+  servlet:
+    context-path: /application1     # 项目的根路径
+
+spring:
+  application:
+    name: application1
+  main:
+    allow-bean-definition-overriding: true   #springboot 2.1 需要设定
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: f197d995-6619-48bd-b8be-95e186042274
+        cluster-name: DEFAULT
+      config:
+        server-addr: 127.0.0.1:8848  # 配置中心地址
+        file-extension: yaml
+        namespace: f197d995-6619-48bd-b8be-95e186042274  # 开发环境
+        group: NACOS_MICROSERVICE_GROUP   # 业务组
